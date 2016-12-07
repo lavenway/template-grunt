@@ -1,25 +1,9 @@
 //colours
 $white: #ffffff;
 $black: #000000;
-$aqua: #9ed6df;
-$blue: #0099ff;
-$bluelight: #cae0f5;
-$bluemedium: #666699;
-$bluedark: #004990;
-$green: #669900;
-$lilacTint: #bc9dca;
-$orange: #ef7c00;
-$peach: #eb5054;
-$pink: #ff0099;
-$pinkTint: #e5007d;
-$green: #669900;
-$grey: #cccccc;
-$greyDark: #666666;
-$purple: #8c0d59;
-$red: #cc0000;
+$blue: blue;
 
 //mixins
-
 @mixin font-smoothing($value: antialiased) {
   -webkit-font-smoothing: $value;
   -moz-osx-font-smoothing: grayscale;
@@ -39,6 +23,7 @@ $red: #cc0000;
     @content;
   } 
 }
+
 @mixin animation($animation) {
   -webkit-animation: #{$animation};
 	-moz-animation: #{$animation};
@@ -52,91 +37,3 @@ $red: #cc0000;
   -ms-transform: $transform;
   transform: $transform;
 }
-
-@include keyframes(bounceDown) {
-	0% {
-    @include transform(translateY(-20px));
-    opacity: 0;
-  } 
-  25% {
-    @include transform(translateY(4px));
-    opacity: 1;
-  }
-  60% {
-    @include transform(translateY(2px)); 
-    opacity: 1;
-  }
-  85% {
-    @include transform(translateY(2px));
-  }
-  90% {
-    opacity: 1;
-  }  
-	100% {
-    @include transform(translateY(20px));
-    opacity: 0;
-  }
-}
-
-@include keyframes(bounceUp) {
-  0% {
-    @include transform(translateY(20px));
-    opacity: 0;
-  }
-  10% {
-    @include transform(translateY(20px));
-    opacity: 0;  
-  }  
-  15% {
-    opacity: 0.5;  
-  }  
-  25% {
-    @include transform(translateY(-4px));
-    opacity: 1;
-  }
-  30% {
-    @include transform(translateY(-2px)); 
-    opacity: 1;
-  }
-  45% {
-    @include transform(translateY(-2px));
-  }
-  90% {
-    opacity: 1;
-  }  
-  100% {
-    @include transform(translateY(-20px));
-    opacity: 0;
-  }
-}
-
-.bounce {
-  &.down {
-    @include animation(bounceDown 4s infinite);
-  }
-
-  &.up {
-    @include animation(bounceUp 1.5s infinite);
-  }
-  
-}
-
-a.btn {
-      display: inline-block;
-      position: relative;
-      left: 50%;
-      width: 78px;
-      margin: 20px 0 0 -39px;
-      padding: 10px 0;
-      font-family: 'VAGRounded';
-      font-weight: 500;
-      font-style: normal;
-      font-size: 17px;
-      font-size: 1.7rem;
-      line-height: 20px;
-      line-height: 2rem;
-      color: $bluedark;
-      text-align: center;
-      border-radius: 6px;
-      background-color: $bluelight;
-    }
